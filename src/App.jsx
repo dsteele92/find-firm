@@ -6,19 +6,20 @@ import LogoSmall from './assets/logo_small.png';
 import LogoWhite from './assets/THE_FIND_SQUARE_FINAL.png';
 import BannerOne from './assets/banner1.jpg';
 
-import { BsArrowDownCircle } from 'react-icons/bs';
-import { BsLinkedin } from 'react-icons/bs';
+import { BsArrowDownCircle, BsLinkedin, BsPhone } from 'react-icons/bs';
+import { AiOutlineMail } from 'react-icons/ai';
 
 function App() {
 	const [background, setBackground] = useState(1);
 	const header = useRef();
+	// const banner = useRef();
 
 	useEffect(() => {
 		const handleScroll = (event) => {
-			const currentHeight = 300;
+			const currentHeight = window.outerWidth > 468 ? 300 : 250;
 			// const windowHeight = window.innerHeight;
-			// console.log(header.current.style);
-			// console.log(window.innerHeight);
+			// console.log(banner.current.style.height);
+			// console.log(window);
 			header.current.style.height = `${currentHeight + window.pageYOffset / 2}px`;
 			header.current.style.opacity = `${1 - window.pageYOffset / 1000}`;
 		};
@@ -39,7 +40,7 @@ function App() {
 
 	const scrollToBottom = () => {
 		window.scrollTo({
-			top: window.innerHeight,
+			top: window.outerHeight,
 			left: 0,
 			behavior: 'smooth',
 		});
@@ -57,9 +58,9 @@ function App() {
 				) : (
 					''
 				)}
-				{/* {background === 1 ? <div className={Style.SlidingBanner1}></div> : ''}
-				{background === 2 ? <div className={Style.SlidingBanner2}></div> : ''}
-				{background === 3 ? <div className={Style.SlidingBanner3}></div> : ''} */}
+				{/* {background === 1 && <div className={Style.SlidingBanner1}></div>}
+				{background === 2 && <div className={Style.SlidingBanner2}></div>}
+				{background === 3 && <div className={Style.SlidingBanner3}></div>} */}
 				{/* <div className={Style[`SlidingBanner${background}`]}></div> */}
 				{/* <div className={Style.SlidingBanner1}></div>
 				<div className={Style.SlidingBanner2}></div>
@@ -78,14 +79,19 @@ function App() {
 					<div className={Style.Info}>
 						<h2>Andrew D. Ingalls</h2>
 						<h4>Principal</h4>
-						<p>310.401.4200</p>
-						<p>andrew@thefindfirm.com</p>
-						<div className={Style.Linkedin}>
-							Connect with me on{' '}
-							<span>
-								<BsLinkedin className={Style.Icon} />
-							</span>
-						</div>
+						<a href='tel:3104014200'>
+							<span> 310.401.4200</span>
+						</a>
+						<a href='mailto:andrew@thefindfirm.com'>
+							<span> andrew@thefindfirm.com</span>
+						</a>
+						<a
+							className={Style.Linkedin}
+							href='https://www.linkedin.com/in/ingallsandrew/'
+							target='_blank'
+							rel='noopener noreferrer'>
+							Connect with me on <BsLinkedin />
+						</a>
 					</div>
 					<img className={Style.LogoSmall} src={LogoSmall} alt='Find Firm LLC logo' />
 					{/* <p className={Style.Slogan}>“Finding Stellar Opportunities To Advance Careers”</p> */}
