@@ -1,37 +1,72 @@
 @import 'sass';
 
-.App {
-	@include flex-center;
-	flex-direction: column;
-	.Top {
+.Container {
+	scroll-snap-type: y mandatory;
+	height: 100vh;
+	overflow-y: scroll;
+
+	section {
 		height: 100vh;
+		scroll-snap-align: center;
+	}
+
+	.Top {
 		width: 100vw;
 		position: relative;
-		.SlidingBanner {
+		.Background {
 			position: absolute;
 			height: 100%;
 			width: 100%;
-			background-size: auto 100vh;
+			background-size: cover;
 			background-attachment: fixed;
 			background-position: center 0;
 			z-index: -1;
-			transition: all 1s ease-in-out;
+			transition: all 1s ease-in;
+			opacity: 0;
+
 			&1 {
-				@extend .SlidingBanner;
-				background-image: url('./assets/banner2.jpg');
+				@extend .Background;
+				opacity: 1;
 			}
 			&2 {
-				@extend .SlidingBanner;
-				background-image: url('./assets/banner1.jpg');
+				@extend .Background;
+				opacity: 1;
 			}
 			&3 {
-				@extend .SlidingBanner;
-				background-image: url('./assets/banner4.jpg');
+				@extend .Background;
+				opacity: 1;
 			}
 
-			@media screen and (max-width: $breakpoint-mobile) {
+			@media screen and (max-width: $breakpoint-tablet) {
+				background-size: auto 100vh;
 			}
 		}
+		// .SlidingBanner {
+		// 	position: absolute;
+		// 	height: 100%;
+		// 	width: 100%;
+		// 	background-size: cover;
+		// 	background-attachment: fixed;
+		// 	background-position: center 0;
+		// 	z-index: -1;
+		// 	transition: all 1s ease-in-out;
+		// 	&1 {
+		// 		@extend .SlidingBanner;
+		// 		background-image: url('./assets/banner1.jpg');
+		// 	}
+		// 	&2 {
+		// 		@extend .SlidingBanner;
+		// 		background-image: url('./assets/banner2.jpg');
+		// 	}
+		// 	&3 {
+		// 		@extend .SlidingBanner;
+		// 		background-image: url('./assets/banner4.jpg');
+		// 	}
+
+		// 	@media screen and (max-width: $breakpoint-tablet) {
+		// 		background-size: auto 100vh;
+		// 	}
+		// }
 		.Overlay {
 			height: 100%;
 			width: 100%;
@@ -97,7 +132,6 @@
 		}
 	}
 	.Contact {
-		height: 100vh;
 		width: 100vw;
 		background: rgb(226, 220, 220);
 		@include flex-center;
