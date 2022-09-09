@@ -11,9 +11,9 @@
 			position: absolute;
 			height: 100%;
 			width: 100%;
-			background-size: cover;
+			background-size: auto 100vh;
 			background-attachment: fixed;
-			background-position: center;
+			background-position: center 0;
 			z-index: -1;
 			transition: all 1s ease-in-out;
 			&1 {
@@ -27,6 +27,9 @@
 			&3 {
 				@extend .SlidingBanner;
 				background-image: url('./assets/banner4.jpg');
+			}
+
+			@media screen and (max-width: $breakpoint-mobile) {
 			}
 		}
 		.Overlay {
@@ -148,6 +151,9 @@
 					font-size: 15px;
 					font-weight: 400;
 					color: black;
+					.LinkedinIcon {
+						vertical-align: top;
+					}
 				}
 			}
 			.LogoSmall {

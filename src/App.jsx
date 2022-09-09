@@ -58,13 +58,6 @@ function App() {
 				) : (
 					''
 				)}
-				{/* {background === 1 && <div className={Style.SlidingBanner1}></div>}
-				{background === 2 && <div className={Style.SlidingBanner2}></div>}
-				{background === 3 && <div className={Style.SlidingBanner3}></div>} */}
-				{/* <div className={Style[`SlidingBanner${background}`]}></div> */}
-				{/* <div className={Style.SlidingBanner1}></div>
-				<div className={Style.SlidingBanner2}></div>
-				<div className={Style.SlidingBanner3}></div> */}
 				<div className={Style.Overlay}>
 					<img ref={header} className={Style.LogoLarge} src={LogoWhite} alt='Find Firm logo' />
 					<div className={Style.Scroll} onClick={scrollToBottom}>
@@ -90,11 +83,10 @@ function App() {
 							href='https://www.linkedin.com/in/ingallsandrew/'
 							target='_blank'
 							rel='noopener noreferrer'>
-							Connect with me on <BsLinkedin />
+							Connect with me on <BsLinkedin className={Style.LinkedinIcon} />
 						</a>
 					</div>
 					<img className={Style.LogoSmall} src={LogoSmall} alt='Find Firm LLC logo' />
-					{/* <p className={Style.Slogan}>“Finding Stellar Opportunities To Advance Careers”</p> */}
 				</div>
 			</section>
 		</div>
