@@ -1,11 +1,8 @@
-# Personal Website
+# The Find Firm
 
--   Technologies used: React, Sass, Axios
--   Created all components from scratch without an external component library
--   Utilized parallax effects with React UseEffect hooks and CSS animations
--   Designed to be responsive with mobile and across all screen sizes
--   Used Axios HTTP requests with Google Scripts to process and save form submission data
+-   Designed and implemented company website using React.js and Sass
+-   Worked closely with the founder to update UX/UI design
 
-## http://dalton.studio
+## http://thefindfirm.com/
 
 ![](https://github.com/dsteele92/find-firm/blob/main/findfirmGIF.gif)
